@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+// Add Bulma
+@charset "utf-8";
+@import "../node_modules/bulma/bulma.sass";
+
+// Add Google Fonts :
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway:400,700&display=swap');
+
+// Set global font
+$family-primary: "Raleway",Sans-serif;
+
+// Remove scoll bar
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+// Hero Image with gradiant
+.hero{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)) , var(--image-url ) center center;
+    background-size: cover;
+  }
+
+  //Center navbar
+  .navbar-item.center {
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+}
+
+// Remove Nav Background
+.hero.is-link a.navbar-item:hover{
+    background-color: transparent;
+}
+a.navbar-item:hover{
+    background-color: transparent;
+}
