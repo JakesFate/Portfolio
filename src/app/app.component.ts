@@ -16,9 +16,9 @@ export class AppComponent {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
   isContact = false;
-  isloading = false;
-  submit() {
-    this.isloading = !this.isloading;
+  isAbout = false;
+  about() {
+    this.isAbout = !this.isAbout;
   }
   toggle() {
     this.isContact = !this.isContact;

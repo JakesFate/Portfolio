@@ -13,18 +13,35 @@
           </span>
         </div>
         <div id="navbarMenuHeroC" class="navbar-menu">
-          <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-            <a class="navbar-item" [routerLink]="['/']" routerLinkActive="router-link-active">
+          <div
+            class="navbar-start"
+            style="flex-grow: 1; justify-content: center;"
+          >
+            <a
+              class="navbar-item"
+              [routerLink]="['/']"
+              routerLinkActive="router-link-active"
+            >
               Home
             </a>
-            <a class="navbar-item" [routerLink]="['/work']" routerLinkActive="router-link-active">
+            <a
+              class="navbar-item"
+              [routerLink]="['/work']"
+              routerLinkActive="router-link-active"
+            >
               Projects
+            </a>
+            <a class="navbar-item" (click)="about()">
+              About
             </a>
             <a class="navbar-item" (click)="toggle()">
               Contact
             </a>
             <span class="navbar-item">
-              <a class="button is-link is-inverted" href="https://github.com/JakesFate">
+              <a
+                class="button is-link is-inverted"
+                href="https://github.com/JakesFate"
+              >
                 <span class="icon">
                   <i class="fab fa-github"></i>
                 </span>
@@ -45,36 +62,84 @@
   <div class="hero-foot"></div>
 </section>
 
-<div class="modal" [ngClass]="{ 'is-active' : isContact }">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Contact Me</p>
-        <button class="delete" (click)="toggle()" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-        <div class="field">
-          <label class="label">Name</label>
-          <div class="control">
-            <input class="input" type="text" placeholder="Name">
-          </div>
+<div class="modal" [ngClass]="{ 'is-active': isContact }">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Contact Me</p>
+      <button class="delete" (click)="toggle()" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Name" />
         </div>
+      </div>
 
-        <div class="field">
-          <label class="label">Email</label>
-          <div class="control">
-            <input class="input" type="email" placeholder="Email">
-          </div>
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+          <input class="input" type="email" placeholder="Email" />
         </div>
-        <div class="field">
-          <label class="label">Message</label>
-          <div class="control">
-            <textarea class="textarea" placeholder="Textarea"></textarea>
-          </div>
+      </div>
+      <div class="field">
+        <label class="label">Message</label>
+        <div class="control">
+          <textarea class="textarea" placeholder="Textarea"></textarea>
         </div>
-      </section>
-      <footer class="modal-card-foot">
-        <div class="button is-link is-fullwidth " [ngClass]="{ 'is-loading' : isloading }" (click)="toggle()">Submit</div>
-      </footer>
-    </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+      <div class="button is-link is-fullwidth " (click)="toggle()">Submit</div>
+    </footer>
   </div>
+</div>
+
+<div class="modal" [ngClass]="{ 'is-active': isAbout }">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">About Me</p>
+      <button class="delete" aria-label="close" (click)="about()"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="card">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img
+                  src="https://i.imgur.com/PyiOha6.jpg"
+                  alt="Placeholder image"
+                />
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">JakesFate</p>
+              <p class="subtitle is-6">@JakesFate</p>
+            </div>
+          </div>
+
+          <div class="content">
+            Have been coding for a little over 8 years with Javascript, Html,
+            Css, and Java. For the past 5 years I have been coding with
+            languages such as : Python, Js, TypeScript, Bash Script along with
+            my other favorite languages I mentioned before. I have also worked
+            in many different Tech workplaces including a game hosting company
+            setting up linux and windows machines. Local businesses in Seattle
+            doing Network installs. If you need a game server setup, Something
+            fixed, Or maybe a website go ahead and contact me!
+            <br />
+            <time datetime="2019-8-12">1:25 PM - 12 Aug 2019</time>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-link is-fullwidth" (click)="about()">
+        Close
+      </button>
+    </footer>
+  </div>
+</div>
